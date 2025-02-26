@@ -1,8 +1,8 @@
 <script>
-import menuIcon from '../assets/Icons/bars-regular.svg';
+import menuIcon from "../assets/Icons/bars-regular.svg";
 
 export default {
-    name: 'navigation',
+    name: "navigation",
     components: {
         menuIcon,
     },
@@ -14,7 +14,7 @@ export default {
         };
     },
     created() {
-        window.addEventListener('resize', this.checkScreen);
+        window.addEventListener("resize", this.checkScreen);
         this.checkScreen();
     },
     methods: {
@@ -39,14 +39,20 @@ export default {
 <template>
     <header>
         <nav class="container">
-            <div class="branding"><router-link class="header" :to="{ name: 'Home' }">RzzBlogs</router-link></div>
+            <div class="branding">
+                <router-link class="header" :to="{ name: 'Home' }"
+                    >RzzBlogs</router-link
+                >
+            </div>
             <div class="nav-links">
                 <!-- @todo make it a component  -->
                 <ul v-show="!mobile">
                     <router-links class="link" to="#">Home</router-links>
                     <router-links class="link" to="#">Blogs</router-links>
                     <router-links class="link" to="#">Create Post</router-links>
-                    <router-links class="link" to="#">Login/Register</router-links>
+                    <router-links class="link" to="#"
+                        >Login/Register</router-links
+                    >
                 </ul>
             </div>
         </nav>
@@ -67,7 +73,8 @@ export default {
 header {
     background-color: #fff;
     padding: 0 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
     z-index: 99;
     .link {
         font-weight: 500;
@@ -146,4 +153,3 @@ nav {
     opacity: 1;
 }
 </style>
-
